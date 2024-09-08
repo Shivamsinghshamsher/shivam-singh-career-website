@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="left-part">
+        <div class="top mt-2 ">
+            <h4 style="color:rgb(120,120,120)"><strong>{{ job['title'] }}</strong></h4>
+        </div>
+        <div class="bottom">
+            <strong>Location:</strong> {{ job['location'] }}
+        </div>
+        {% if 'salary' in job %}
+        <div class="bottom">
+            <strong>Salary:</strong> {{ job['salary'] }}
+        </div>
+        {% endif %}
+    </div>
+    <div class="right-part">
+        <a href='mailto:samsersingh3133s@gmail.com?subject=Apply%20for%20job%20{{job['title']}}&body=My%20Name%20%3CYour%20name%20here%3E%0D%0AMy%20Resume%20Link%20%3CResume%20link%20here%3E%0D%0AMy%20linkdin%20link%20%3CLinkdin%20link%3E' class='btn btn-outline-primary' type='button'>Apply Now</a>
+    </div>
+</div>
