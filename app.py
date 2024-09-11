@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect,url_for
 
 app = Flask(__name__)
 
@@ -74,6 +74,34 @@ def hello():
 @app.route('/api/jobs')
 def list_jobs():
    return jsonify(JOBS)
+
+
+# Routes for users
+@app.route("/submit_registration", methods=['POST','GET'])
+def register():
+    if request.method=='POST':
+       name = request.form['fullName']
+       mobileno=request.form['mobileNo']
+       password=request.form['password']
+       print(name,mobileno,password)
+       
+       return redirect(url_for('login'))
+    else:
+       return render_template('register.html')
+
+@app.route("/login")
+def login():
+   return render_template('login.html')
+@app.route("/dashboard")
+def dashboard():
+   return render_template('dashboard.html')
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":

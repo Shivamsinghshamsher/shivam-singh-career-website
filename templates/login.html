@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+
+<h2 class="mt-5">Login:</h2>
+        <form action="/submit_login" method="POST" enctype="multipart/form-data">
+          
+            <div class="form-group">
+                <label for="mobileNo">Mobile No:</label>
+                <input type="text" class="form-control" id="mobileNo" name="mobileNo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+ {% include 'footer.html' %}
